@@ -1,9 +1,9 @@
 {
   "name": "noglify-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Concatenation tool for JavaScript files not minifying anything - so useful for debugging",
-  "main": "src/index.js",
-  "bin": "src/noglifyjs",
+  "main": "index.js",
+  "bin": "bin/noglifyjs",
   "scripts": {
     "test": "mocha"
   },
