@@ -1,0 +1,38 @@
+{
+  "name": "noglify-js",
+  "version": "0.0.1",
+  "description": "Concatenation tool for JavaScript files not minifying anything - so useful for debugging",
+  "main": "src/index.js",
+  "bin": "src/noglifyjs",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrieloheix/npm-noglifyjs.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "minifier",
+    "minify",
+    "debug",
+    "tool",
+    "command",
+    "concat",
+    "cat",
+    "concatenate",
+    "concatenation"
+  ],
+  "author": "Gabriel Oheix",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gabrieloheix/npm-noglifyjs/issues"
+  },
+  "homepage": "https://github.com/gabrieloheix/npm-noglifyjs#readme",
+  "dependencies": {
+    "commander": "^2.19.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}

@@ -1,0 +1,108 @@
+#! /usr/bin/env node
+
+//
+//	noglifyjs
+//
+//	Concatenate JavaScript files without minifying
+//
+//	Author: Gabriel Oheix
+//
+
+
+// modules
+
+const commander = require("commander");
+const fs = require("fs");
+const os = require("os");
+
+const packagejson = require('../package.json');
+const noglifyjs = require('../index.js');
+
+
+// command line
+
+commander.version(packagejson.version)
+	.option('-o, --output <file>', 'Output file (default STDOUT)')
+	.option('-A, --filenames', 'Add comments lines with file names')
+	.option('-N, --newlines', 'Add extra new lines')
+	.arguments('[files...|STDIN]')
+	.parse(process.argv);
+
+
+
+// parameters & options
+
+const options = {
+	inputs: commander.args,
+	output: commander.output,
+
+	filenames: commander.filenames,
+	newlines: commander.newlines,
+};
+
+
+// concat files
+
+noglifyjs.init(options);
+
+process_input(process_contents);
+
+
+function process_input(callback) {
+	if (!options.inputs.length) {
+		read_stdin_content(callback);
+	}
+	callback(options.inputs.map(read_file_content));
+}
+
+function process_contents(contents) {
+	const transformed = contents.map(wrap_content);
+	const joined = transformed.join(noglifyjs.separator());
+
+	if (!options.output) {
+		return write_stdout_content(joined);
+	}
+	write_file_content(options.output, joined);
+}
+
+function wrap_content(obj) {
+	return noglifyjs.wrap(obj.filename, obj.content);
+}
+
+
+// input
+
+function read_file_content(filename) {
+	return noglifyjs.create_obj(filename, fs.readFileSync(filename, "utf8"));
+}
+
+function read_stdin_content(callback) {
+	const chunks = [];
+	process.stdin
+		.on("data", on_data)
+		.on("end", on_end)
+		.setEncoding("utf8")
+		.resume();
+
+	function on_data(chunk) {
+		chunks.push(chunk);
+	}
+
+	function on_end() {
+		const content = [ chunks.join('') ];
+		const obj = noglifyjs.create_obj('stdin', chunks.join(''));
+		callback([ obj ]);
+	}
+}
+
+
+// output
+
+function write_file_content(filename, content) {
+	fs.writeFileSync(filename, content);
+}
+
+function write_stdout_content(content) {
+	process.stdout.write(content);
+}
+
