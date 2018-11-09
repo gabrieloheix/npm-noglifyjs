@@ -1,10 +1,12 @@
-# npm-noglifyjs
+# noglify-js
+
+[![npm version](https://badge.fury.io/js/noglify-js.svg)](https://badge.fury.io/js/noglify-js)
+[![Build Status](https://travis-ci.org/gabrieloheix/npm-noglifyjs.svg?branch=master)](https://travis-ci.org/gabrieloheix/npm-noglifyjs)
 
 Concatenation tool for JavaScript files not minifying anything.
 
 Useful for debugging purpose as it is adding a semi-colon character in between files content.
 
----
 
 ## Usage
 
@@ -12,19 +14,23 @@ Useful for debugging purpose as it is adding a semi-colon character in between f
 
 Concat all files into one - without minifying:
 
-	$ noglifyjs -o output.js js/*.js
+	$ noglifyjs -o output.js  js/*.js
 
 Adding optional new lines and file names:
 
-	$ noglifyjs -o output.js --newlines --filenames js/*.js
+	$ noglifyjs -o output.js --newlines --filenames  js/*.js
 
 Redirect everything to ```stdout```:
 
-	$ noglifyjs js/*.js
+	$ noglifyjs  js/*.js
 
 Use ```stdin``` as input:
 
 	$ noglifyjs < js/unique.js
+
+Pipe in a shell environment - reading from ```stdin``` and writing to ```stdout```:
+
+	$ cat js/unique.js | noglifyjs --filenames | cat
 
 ### Using require
 
@@ -34,7 +40,6 @@ Concat all files into one - without minifying:
 
 	// TODO needs refactoring
 
----
 
 ## Install
 
@@ -43,21 +48,20 @@ Concat all files into one - without minifying:
 TODO  
 To install globally, use option ```-g```:
 
-	$ npm install -g noglifyjs
+	$ npm install -g noglify-js
 
 ### Local install
 
 TODO  
 To install the module locally only:
 
-	$ npm install noglifyjs
+	$ npm install noglify-js --save-dev
 	$ ln -s node_modules/noglifyjs/bin/noglifyjs
 
----
 
 ## Examples
 
-The following examples will use those 2 input files.
+Considering those 2 files.
 
 File ```hello.js```:
 
@@ -128,6 +132,21 @@ Output file ```filenames.js```:
 
 	// ### end of bonjour.js
 
+### In a Makefile
+
+As a ```Makefile``` target:
+
+	...
+	./build/all.js: ./js/*.js
+		noglifyjs -o $@  $^
+	...
+
+## Troubleshooting
+
+None recorded.
+
+
+Thank you for reading.
 
 ---
 Author: _Gabriel Oheix_
