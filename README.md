@@ -33,8 +33,8 @@ Repository for the npm package ```noglify-js```.
 [devDependencies-svg]: https://david-dm.org/gabrieloheix/npm-noglifyjs/dev-status.svg
 [devDependencies-link]: https://david-dm.org/gabrieloheix/npm-noglifyjs?type=dev
 
-[hit-svg]: http://hits.dwyl.com/gabrieloheix/npm-noglifyjs.svg
-[hit-link]: http://hits.dwyl.com/gabrieloheix/npm-noglifyjs
+[hit-svg]: https://hits.dwyl.com/gabrieloheix/npm-noglifyjs.svg
+[hit-link]: https://hits.dwyl.com/gabrieloheix/npm-noglifyjs
 
 
 JavaScript non-minifier tool only concatenating files.
