@@ -1,0 +1,328 @@
+# noglify-js
+
+[//]: # (https://github.com/dwyl/repo-badges)
+
+[ ![build][build-svg] ][build-link]
+[ ![codecov][codecov-svg] ][codecov-link]
+[ ![maintain][maintain-svg] ][maintain-link]
+[ ![npm][npm-svg] ][npm-link]  
+[ ![dependencies][dependencies-svg] ][dependencies-link]
+[ ![devDependencies][devDependencies-svg] ][devDependencies-link]
+[ ![hit][hit-svg] ][hit-link]
+
+[build-svg]: https://travis-ci.org/gabrieloheix/npm-noglifyjs.svg?branch=master
+[build-link]: https://travis-ci.org/gabrieloheix/npm-noglifyjs
+
+[codecov-svg]: https://codecov.io/gh/gabrieloheix/npm-noglifyjs/branch/master/graph/badge.svg
+[codecov-link]: https://codecov.io/gh/gabrieloheix/npm-noglifyjs
+
+[maintain-svg]: https://api.codeclimate.com/v1/badges/2acd854abd2aeff743fa/maintainability
+[maintain-link]: https://codeclimate.com/github/gabrieloheix/npm-noglifyjs/maintainability
+
+[npm-svg]: https://badge.fury.io/js/noglify-js.svg
+[npm-link]: https://badge.fury.io/js/noglify-js
+
+[dependencies-svg]: https://david-dm.org/gabrieloheix/npm-noglifyjs/status.svg
+[dependencies-link]: https://david-dm.org/gabrieloheix/npm-noglifyjs
+
+[devDependencies-svg]: https://david-dm.org/gabrieloheix/npm-noglifyjs/dev-status.svg
+[devDependencies-link]: https://david-dm.org/gabrieloheix/npm-noglifyjs?type=dev
+
+[hit-svg]: http://hits.dwyl.com/gabrieloheix/npm-noglifyjs.svg
+[hit-link]: http://hits.dwyl.com/gabrieloheix/npm-noglifyjs
+
+
+JavaScript non-minifier tool only concatenating files.
+
+Useful for debugging purpose as adding a semi-colon character in-between file contents.
+
+
+## Getting started
+
+### Install
+
+Install the npm package locally:
+
+	$ npm install noglify-js --save-dev
+
+[More information on NPM Install](#npm-install)
+
+### How to use
+
+```noglify-js``` can be used command line or as a Node.js module.
+
+#### Command Line
+
+Use ```noglify-js``` command inside your project:
+
+	$ noglify-js -o build/output.js  js/*.js
+
+[More information on Command Line Tool](#command-line-tool)
+
+#### Node.js Module
+
+Use as a Node.js module through ```require()```:
+
+	const noglifyjs = require('noglify-js');
+	const result = noglifyjs(["var _ = 1", "var _ = 2"]);
+
+[More information on Node.js Module Dependency](#nodejs-module-dependency)
+
+### Output example
+
+Simple example of output:
+
+	var _ = 1
+	;
+	var _ = 2
+
+[More information on Examples](#examples)
+
+
+## NPM Install
+
+### Local install
+
+To install ```noglify-js``` locally in your npm project:
+
+	$ npm install noglify-js --save-dev
+	$ ln -s node_modules/.bin/noglify-js
+
+### Global install
+
+You can install ```noglify-js``` globally on your system.
+
+	$ npm install -g noglify-js
+
+Note that it will then not be installed on other platforms unless also specified as a dependency in ```package.json```.
+
+### Production dependency
+
+```noglify-js``` aims at being used for debug purposes, but it is obviously possible to use it for production.  
+Then install it as a _dependency_ instead of a _dev dependency_.
+
+	$ npm install noglify-js --save
+	$ ln -s node_modules/.bin/noglify-js
+
+### Outside of NPM
+
+You can use ```noglify-js``` without NPM.
+
+Download and extract the zip file from GitHub.  
+Make the file ```bin/noglify-js``` executable and add it to your path.  
+You still need _Node.js_.
+
+
+## Usage
+
+The default use case is through command line interaction but it can also be imported in a Node.js program.
+
+### Command Line Tool
+
+#### Version
+
+```noglify-js``` is a command line binary so it can be called from a command prompt.  
+To test is has correctly be installed, you can try printing the version.  
+If it does not work, check your path variable.
+
+	$ noglify-js --version
+
+Help can be displayed with ```noglify-js --help```.
+
+#### Command
+
+A normal use case taking several files as input and concatenating them into an output file:
+
+	$ noglify-js -o output.js  js/*.js
+
+If ```-o``` is not specified, output is given to ```stdout```.
+
+	$ noglify-js  js/*.js
+
+If no file is given as parameter, content is read from ```stdin```.
+
+	$ noglify-js -o output.js
+
+Here is an example of how to read from ```stdin``` and output to ```stdout```.
+
+	$ cat js/unique.js | noglify-js | cat
+
+#### With options
+
+Option ```--newlines``` can be used to add extra lines in-between file contents.
+
+	$ noglify-js -o output.js --newlines  js/*.js
+
+Option ```--filenames``` is adding the file name in comments at the beginning and the end of the file content.
+
+	$ noglify-js -o output.js --filenames  js/*.js
+
+#### In a Makefile
+
+As ```noglify-js``` is a command line tool so it can also be used in a ```Makefile``` as a target:
+
+	...
+	./build/all.js: ./js/*.js
+		noglify-js -o $@  $^
+	...
+
+### Node.js Module Dependency
+
+The ```noglify-js``` module provide a single function dealing with content directly, not file names.
+
+Function signature:
+
+	// @param inputs array[string]|array[object] - where object is like { filename: "", content: "" }
+	// @param options object - where object is like { filenames: false, newlines: false }
+	// @return string
+	noglifyjs(inputs, options);
+
+#### Require
+
+To use ```noglify-js``` in your Node.js program, include it through the Node ```require()``` functionality.
+
+	const noglifyjs = require('noglify-js');
+
+#### Simple function call
+
+Process 2 simple JavaScript contents.
+
+	const result = noglifyjs(["var _ = 1", "var _ = 2"]);
+
+#### With filenames
+
+Another way of calling the function is to give an array of objects specifying also the filenames.
+
+	const obj1 = { filename: "js/file1.js", content: "var _ = 1" };
+	const obj2 = { filename: "js/file2.js", content: "var _ = 2" };
+	const result = noglifyjs([obj1, obj2]);
+
+#### With options
+
+Option ```newlines``` can be used to add extra lines in-between file contents.
+
+	...
+	const options = { newlines: true };
+	const result = noglifyjs([obj1, obj2], options);
+
+Option ```filenames``` is adding the file name in comments at the beginning and the end of the file content.
+
+	...
+	const options = { newlines: true, filenames: true };
+	const result = noglifyjs([obj1, obj2], options);
+
+_Note:_ option ```filenames``` will not work if raw strings are used instead of objects.
+
+
+## Examples
+
+Considering 2 input files.
+
+File ```hello.js```:
+
+	(function() {
+		document.addEventListener('DOMContentLoaded', function() {
+			console.log("Hello world!");
+		});
+	})()
+
+File ```bonjour.js```:
+
+	(function() {
+		document.addEventListener('DOMContentLoaded', function() {
+			console.log("Bonjour le monde !");
+		});
+	})()
+
+### Basic example
+
+Command:
+
+	$ noglify-js -o debug.js  hello.js bonjour.js
+
+
+Output file ```debug.js```:
+
+	(function() {
+		document.addEventListener('DOMContentLoaded', function() {
+			console.log("Hello world!");
+		});
+	})()
+	;
+	(function() {
+		document.addEventListener('DOMContentLoaded', function() {
+			console.log("Bonjour le monde !");
+		});
+	})()
+
+### Example with option 'filenames'
+
+Command:
+
+	$ noglify-js -o filenames.js --filenames  hello.js bonjour.js
+
+
+Output file ```filenames.js```:
+
+	
+	// ### hello.js
+
+	(function() {
+		document.addEventListener('DOMContentLoaded', function() {
+			console.log("Hello world!");
+		});
+	})()
+
+	// ### end of hello.js
+
+	; // file separator
+
+	// ### bonjour.js
+
+	(function() {
+		document.addEventListener('DOMContentLoaded', function() {
+			console.log("Bonjour le monde !");
+		});
+	})()
+
+	// ### end of bonjour.js
+
+
+### Example with option 'newlines'
+
+Command:
+
+	$ noglify-js -o newlines.js --newlines  hello.js bonjour.js
+
+
+Output file ```newlines.js```:
+
+	(function() {
+		document.addEventListener('DOMContentLoaded', function() {
+			console.log("Hello world!");
+		});
+	})()
+
+
+
+	;
+
+
+
+	(function() {
+		document.addEventListener('DOMContentLoaded', function() {
+			console.log("Bonjour le monde !");
+		});
+	})()
+
+
+## Troubleshooting
+
+None recorded.
+
+
+##
+
+Thank you for reading.
+
+Author: _Gabriel Oheix_

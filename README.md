@@ -1,152 +1,54 @@
+# npm-noglifyjs
+
+Repository for the npm package ```noglify-js```.
+
+
 # noglify-js
 
-[![npm version](https://badge.fury.io/js/noglify-js.svg)](https://badge.fury.io/js/noglify-js)
-[![Build Status](https://travis-ci.org/gabrieloheix/npm-noglifyjs.svg?branch=master)](https://travis-ci.org/gabrieloheix/npm-noglifyjs)
+[//]: # (https://github.com/dwyl/repo-badges)
 
-Concatenation tool for JavaScript files not minifying anything.
+[ ![build][build-svg] ][build-link]
+[ ![codecov][codecov-svg] ][codecov-link]
+[ ![maintain][maintain-svg] ][maintain-link]
+[ ![npm][npm-svg] ][npm-link]  
+[ ![dependencies][dependencies-svg] ][dependencies-link]
+[ ![devDependencies][devDependencies-svg] ][devDependencies-link]
+[ ![hit][hit-svg] ][hit-link]
 
-Useful for debugging purpose as it is adding a semi-colon character in between files content.
+[build-svg]: https://travis-ci.org/gabrieloheix/npm-noglifyjs.svg?branch=master
+[build-link]: https://travis-ci.org/gabrieloheix/npm-noglifyjs
 
+[codecov-svg]: https://codecov.io/gh/gabrieloheix/npm-noglifyjs/branch/master/graph/badge.svg
+[codecov-link]: https://codecov.io/gh/gabrieloheix/npm-noglifyjs
 
-## Usage
+[maintain-svg]: https://api.codeclimate.com/v1/badges/2acd854abd2aeff743fa/maintainability
+[maintain-link]: https://codeclimate.com/github/gabrieloheix/npm-noglifyjs/maintainability
 
-### Command line
+[npm-svg]: https://badge.fury.io/js/noglify-js.svg
+[npm-link]: https://badge.fury.io/js/noglify-js
 
-Concat all files into one - without minifying:
+[dependencies-svg]: https://david-dm.org/gabrieloheix/npm-noglifyjs/status.svg
+[dependencies-link]: https://david-dm.org/gabrieloheix/npm-noglifyjs
 
-	$ noglifyjs -o output.js  js/*.js
+[devDependencies-svg]: https://david-dm.org/gabrieloheix/npm-noglifyjs/dev-status.svg
+[devDependencies-link]: https://david-dm.org/gabrieloheix/npm-noglifyjs?type=dev
 
-Adding optional new lines and file names:
-
-	$ noglifyjs -o output.js --newlines --filenames  js/*.js
-
-Redirect everything to ```stdout```:
-
-	$ noglifyjs  js/*.js
-
-Use ```stdin``` as input:
-
-	$ noglifyjs < js/unique.js
-
-Pipe in a shell environment - reading from ```stdin``` and writing to ```stdout```:
-
-	$ cat js/unique.js | noglifyjs --filenames | cat
-
-### Using require
-
-Concat all files into one - without minifying:
-
-	const noglifyjs = require('noglifyjs');
-
-	// TODO needs refactoring
+[hit-svg]: http://hits.dwyl.com/gabrieloheix/npm-noglifyjs.svg
+[hit-link]: http://hits.dwyl.com/gabrieloheix/npm-noglifyjs
 
 
-## Install
+JavaScript non-minifier tool only concatenating files.
 
-### Global install
-
-TODO  
-To install globally, use option ```-g```:
-
-	$ npm install -g noglify-js
-
-### Local install
-
-TODO  
-To install the module locally only:
-
-	$ npm install noglify-js --save-dev
-	$ ln -s node_modules/noglifyjs/bin/noglifyjs
+Useful for debugging purpose as adding a semi-colon character in-between file contents.
 
 
-## Examples
+## Documentation
 
-Considering those 2 files.
+[Documentation for the npm package ```noglify-js```.][doc]
 
-File ```hello.js```:
-
-	(function() {
-		document.addEventListener('DOMContentLoaded', function() {
-			console.log("Hello world!");
-		});
-	})()
-
-File ```bonjour.js```:
-
-	(function() {
-		document.addEventListener('DOMContentLoaded', function() {
-			console.log("Bonjour le monde !");
-		});
-	})()
-
-### Basic example
-
-Command:
-
-	$ noglifyjs -o debug.js hello.js bonjour.js
+[doc]: https://github.com/gabrieloheix/npm-noglifyjs/blob/master/DOCUMENTATION.md
 
 
-Output file ```debug.js```:
+##
 
-	(function() {
-		document.addEventListener('DOMContentLoaded', function() {
-			console.log("Hello world!");
-		});
-	})()
-	;
-	(function() {
-		document.addEventListener('DOMContentLoaded', function() {
-			console.log("Bonjour le monde !");
-		});
-	})()
-
-### Example with option 'filenames'
-
-Command:
-
-	$ noglifyjs -o filenames.js --filenames hello.js bonjour.js
-
-
-Output file ```filenames.js```:
-
-		
-	// ### hello.js
-
-	(function() {
-		document.addEventListener('DOMContentLoaded', function() {
-			console.log("Hello world!");
-		});
-	})()
-
-	// ### end of hello.js
-
-	; // file separator
-
-	// ### bonjour.js
-
-	(function() {
-		document.addEventListener('DOMContentLoaded', function() {
-			console.log("Bonjour le monde !");
-		});
-	})()
-
-	// ### end of bonjour.js
-
-### In a Makefile
-
-As a ```Makefile``` target:
-
-	...
-	./build/all.js: ./js/*.js
-		noglifyjs -o $@  $^
-	...
-
-## Troubleshooting
-
-None recorded.
-
-
-Thank you for reading.
-
----
 Author: _Gabriel Oheix_
