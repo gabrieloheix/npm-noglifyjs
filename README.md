@@ -46,7 +46,7 @@ Useful for debugging purpose as adding a semi-colon character in-between file co
 
 [Documentation for the npm package ```noglify-js```.][doc]
 
-[doc]: https://github.com/gabrieloheix/npm-noglifyjs/blob/master/DOCUMENTATION.md
+[doc]: https://www.npmjs.com/package/noglify-js
 
 
 ##
