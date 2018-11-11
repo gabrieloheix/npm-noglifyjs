@@ -1,5 +1,30 @@
 # npm-noglifyjs
 
+[![release][release-svg]][release-link] 
+[![open][open-svg]][open-link]
+[![closed][closed-svg]][closed-link]
+[![size][size-svg]][size-link]
+[![minified][minified-svg]][minified-link]
+[![github][githubDownloads-svg]][githubDownloads-link]
+
+[release-svg]: https://img.shields.io/github/release/gabrieloheix/npm-noglifyjs.svg
+[release-link]: https://github.com/gabrieloheix/npm-noglifyjs/releases
+
+[open-svg]: https://img.shields.io/github/issues/gabrieloheix/npm-noglifyjs.svg
+[open-link]: https://github.com/gabrieloheix/npm-noglifyjs/issues
+
+[closed-svg]: https://img.shields.io/github/issues-closed/gabrieloheix/npm-noglifyjs.svg
+[closed-link]: https://github.com/gabrieloheix/npm-noglifyjs/issues?q=is%3Aissue+is%3Aclosed
+
+[size-svg]: https://github-size-badge.herokuapp.com/gabrieloheix/npm-noglifyjs.svg
+[size-link]: https://github.com/gabrieloheix/npm-noglifyjs
+
+[minified-svg]: https://img.shields.io/bundlephobia/min/noglify-js.svg
+[minified-link]: https://bundlephobia.com/result?p=noglify-js
+
+[githubDownloads-svg]: https://img.shields.io/github/downloads/gabrieloheix/npm-noglifyjs/total.svg
+[githubDownloads-link]: https://github.com/gabrieloheix/npm-noglifyjs
+
 Repository for the npm package ```noglify-js```.
 
 
@@ -7,13 +32,19 @@ Repository for the npm package ```noglify-js```.
 
 [//]: # (https://github.com/dwyl/repo-badges)
 
-[ ![build][build-svg] ][build-link]
-[ ![codecov][codecov-svg] ][codecov-link]
-[ ![maintain][maintain-svg] ][maintain-link]
-[ ![npm][npm-svg] ][npm-link]  
-[ ![dependencies][dependencies-svg] ][dependencies-link]
-[ ![devDependencies][devDependencies-svg] ][devDependencies-link]
-[ ![hit][hit-svg] ][hit-link]
+[![build][build-svg]][build-link]
+[![codecov][codecov-svg]][codecov-link]
+[![maintain][maintain-svg]][maintain-link]
+[![issues][issues-svg]][issues-link]
+[![npm][npm-svg]][npm-link]  
+[![mit][mit-svg]][mit-link]
+[![downloads][totalDownloads-svg]][totalDownloads-link]
+[![yearly][yearlyDownloads-svg]][yearlyDownloads-link]
+[![monthly][monthlyDownloads-svg]][monthlyDownloads-link]
+[![weekly][weeklyDownloads-svg]][weeklyDownloads-link]  
+[![dependencies][dependencies-svg]][dependencies-link]
+[![devDependencies][devDependencies-svg]][devDependencies-link]
+[![hit][hit-svg]][hit-link]
 
 [build-svg]: https://travis-ci.org/gabrieloheix/npm-noglifyjs.svg?branch=master
 [build-link]: https://travis-ci.org/gabrieloheix/npm-noglifyjs
@@ -24,8 +55,26 @@ Repository for the npm package ```noglify-js```.
 [maintain-svg]: https://api.codeclimate.com/v1/badges/2acd854abd2aeff743fa/maintainability
 [maintain-link]: https://codeclimate.com/github/gabrieloheix/npm-noglifyjs/maintainability
 
-[npm-svg]: https://badge.fury.io/js/noglify-js.svg
-[npm-link]: https://badge.fury.io/js/noglify-js
+[issues-svg]: https://img.shields.io/codeclimate/issues/gabrieloheix/npm-noglifyjs.svg
+[issues-link]: https://github.com/gabrieloheix/npm-noglifyjs/issues
+
+[npm-svg]: https://img.shields.io/npm/v/noglify-js.svg
+[npm-link]: https://www.npmjs.com/package/noglify-js
+
+[mit-svg]: https://img.shields.io/badge/license-MIT-blue.svg
+[mit-link]: https://github.com/gabrieloheix/npm-noglifyjs/blob/master/LICENSE
+
+[totalDownloads-svg]: https://img.shields.io/npm/dt/noglify-js.svg
+[totalDownloads-link]: https://www.npmjs.com/package/noglify-js
+
+[yearlyDownloads-svg]: https://img.shields.io/npm/dy/noglify-js.svg
+[yearlyDownloads-link]: https://www.npmjs.com/package/noglify-js
+
+[monthlyDownloads-svg]: https://img.shields.io/npm/dm/noglify-js.svg
+[monthlyDownloads-link]: https://www.npmjs.com/package/noglify-js
+
+[weeklyDownloads-svg]: https://img.shields.io/npm/dw/noglify-js.svg
+[weeklyDownloads-link]: https://www.npmjs.com/package/noglify-js
 
 [dependencies-svg]: https://david-dm.org/gabrieloheix/npm-noglifyjs/status.svg
 [dependencies-link]: https://david-dm.org/gabrieloheix/npm-noglifyjs
