@@ -10,14 +10,14 @@ Repository for the npm package ```noglify-js```.
 [![build][build-svg]][build-link]
 [![codecov][codecov-svg]][codecov-link]
 [![maintain][maintain-svg]][maintain-link]
-![size][size-svg]
+[![issues][issues-svg]][issues-link]
+[![size][size-svg]][size-link]
 [![npm][npm2-svg]][npm2-link]  
 [![github][github-svg]][github-link]
-![downloads][downloads-svg]
-![yearly][yearly-svg]
-![monthly][monthly-svg]
-![weekly][weekly-svg]
-![issues][issues-svg]  
+[![downloads][downloads-svg]][downloads-link]
+[![yearly][yearly-svg]][yearly-link]
+[![monthly][monthly-svg]][monthly-link]
+[![weekly][weekly-svg]][weekly-link]  
 [![dependencies][dependencies-svg]][dependencies-link]
 [![devDependencies][devDependencies-svg]][devDependencies-link]
 [![hit][hit-svg]][hit-link]
@@ -32,6 +32,7 @@ Repository for the npm package ```noglify-js```.
 [maintain-link]: https://codeclimate.com/github/gabrieloheix/npm-noglifyjs/maintainability
 
 [size-svg]: https://img.shields.io/bundlephobia/min/noglify-js.svg
+[size-link]: https://bundlephobia.com/result?p=noglify-js
 
 [//]: # ([![npm][npm-svg]][npm-link]  )
 [npm-svg]: https://badge.fury.io/js/noglify-js.svg
@@ -44,14 +45,19 @@ Repository for the npm package ```noglify-js```.
 [github-link]: https://github.com/gabrieloheix/npm-noglifyjs
 
 [downloads-svg]: https://img.shields.io/npm/dt/noglify-js.svg
+[downloads-link]: https://www.npmjs.com/package/noglify-js
 
 [yearly-svg]: https://img.shields.io/npm/dy/noglify-js.svg
+[yearly-link]: https://www.npmjs.com/package/noglify-js
 
 [monthly-svg]: https://img.shields.io/npm/dm/noglify-js.svg
+[monthly-link]: https://www.npmjs.com/package/noglify-js
 
 [weekly-svg]: https://img.shields.io/npm/dw/noglify-js.svg
+[weekly-link]: https://www.npmjs.com/package/noglify-js
 
 [issues-svg]: https://img.shields.io/codeclimate/issues/gabrieloheix/npm-noglifyjs.svg
+[issues-link]: https://github.com/gabrieloheix/npm-noglifyjs/issues
 
 [dependencies-svg]: https://david-dm.org/gabrieloheix/npm-noglifyjs/status.svg
 [dependencies-link]: https://david-dm.org/gabrieloheix/npm-noglifyjs
