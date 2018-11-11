@@ -37,11 +37,11 @@ Repository for the npm package ```noglify-js```.
 [![maintain][maintain-svg]][maintain-link]
 [![issues][issues-svg]][issues-link]
 [![npm][npm-svg]][npm-link]  
+[![mit][mit-svg]][mit-link]
 [![downloads][totalDownloads-svg]][totalDownloads-link]
 [![yearly][yearlyDownloads-svg]][yearlyDownloads-link]
 [![monthly][monthlyDownloads-svg]][monthlyDownloads-link]
 [![weekly][weeklyDownloads-svg]][weeklyDownloads-link]  
-[![mit][mit-svg]][mit-link]
 [![dependencies][dependencies-svg]][dependencies-link]
 [![devDependencies][devDependencies-svg]][devDependencies-link]
 [![hit][hit-svg]][hit-link]
@@ -61,6 +61,9 @@ Repository for the npm package ```noglify-js```.
 [npm-svg]: https://img.shields.io/npm/v/noglify-js.svg
 [npm-link]: https://www.npmjs.com/package/noglify-js
 
+[mit-svg]: https://img.shields.io/badge/license-MIT-blue.svg
+[mit-link]: https://github.com/gabrieloheix/npm-noglifyjs/blob/master/LICENSE
+
 [totalDownloads-svg]: https://img.shields.io/npm/dt/noglify-js.svg
 [totalDownloads-link]: https://www.npmjs.com/package/noglify-js
 
@@ -72,9 +75,6 @@ Repository for the npm package ```noglify-js```.
 
 [weeklyDownloads-svg]: https://img.shields.io/npm/dw/noglify-js.svg
 [weeklyDownloads-link]: https://www.npmjs.com/package/noglify-js
-
-[mit-svg]: https://img.shields.io/badge/license-MIT-blue.svg
-[mit-link]: https://github.com/gabrieloheix/npm-noglifyjs/blob/master/LICENSE
 
 [dependencies-svg]: https://david-dm.org/gabrieloheix/npm-noglifyjs/status.svg
 [dependencies-link]: https://david-dm.org/gabrieloheix/npm-noglifyjs
