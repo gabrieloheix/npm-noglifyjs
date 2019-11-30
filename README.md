@@ -101,4 +101,6 @@ Useful for debugging purpose as adding a semi-colon character in-between file co
 
 ##
 
-Author: _Gabriel Oheix_
+Author: _Gabriel Oheix_  
+Last update: _November 2019_
+
