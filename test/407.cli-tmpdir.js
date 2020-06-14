@@ -99,7 +99,7 @@ describe("Command Line - tmpdir", function() {
 
 		it("create file", function() {
 			const file = os.tmpdir() + '/noglifyjs-unit-test-example.js';
-			fs.writeFileSync(file);
+			fs.writeFileSync(file, "file created");
 		});
 
 		it("file exists", function() {

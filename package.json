@@ -1,6 +1,6 @@
 {
   "name": "noglify-js",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "JavaScript non-minifier tool only concatenating files",
   "main": "src/noglify.js",
   "bin": "bin/noglify-js",
@@ -31,9 +31,9 @@
   },
   "homepage": "https://github.com/gabrieloheix/npm-noglifyjs#readme",
   "dependencies": {
-    "commander": "^4.0.1"
+    "commander": "^5.1.0"
   },
   "devDependencies": {
-    "mocha": "^6.2.2"
+    "mocha": "^8.0.1"
   }
 }
